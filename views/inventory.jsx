@@ -1,7 +1,7 @@
 var React = require('react');
 var Layout = require('./layout');
 
-var Homepage = React.createClass({
+var Inventory = React.createClass({
   render: function() {
     return(
       <Layout>
@@ -11,4 +11,4 @@ var Homepage = React.createClass({
   }
 });
 
-module.exports = Homepage;
+module.exports = Inventory;

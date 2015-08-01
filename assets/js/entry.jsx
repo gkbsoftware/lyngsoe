@@ -1,4 +1,5 @@
 var React = require('react');
+var Note = require('./Note');
 require('../css/style.css')
 // import App from './App'
 
@@ -18,7 +19,12 @@ var App = React.createClass({
 
   render: function(){
     return(
-      <div>{this.state.entries}</div>
+      <div>
+        {this.state.entries}
+        <br/>
+        <Note name={"mark"}/>
+      </div>
+
     )
   }
 })

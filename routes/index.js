@@ -15,6 +15,10 @@ router.get('/entries', function(req, res, next) {
   res.json({entries: [{name: 'jason'}]});
 });
 
+router.post('/entries', function(req, res, next) {
+  res.send('posted to /entries')
+});
+
 router.get('/db-connect', function(req, res) {
   var pg = require('pg');
   var conString = process.env.DB_INFO;

@@ -1,25 +1,26 @@
 var React = require('react');
 
 var Note = React.createClass({
-  sayHi(){
+  sayHi: function(){
     console.log('hi')
-    let data = {
+    var data = {
       name: this.props.name
     }
 
     fetch('/entries', {
-      method: 'POST',
+      method: 'post',
       headers: {
         'Accept': 'application/json',
         'Content-Type': 'application/json'
       },
-      body: JSON.stringify(data)
-    }).then((d) => d.json()).then((data) =>{
-      console.log('done!', data)
+      body: JSON.stringify({
+        name: 'Hubot',
+        login: 'hubot',
+      })
     })
-  }
+  },
 
-  render() {
+  render: function(){
     return (
       <div onClick={this.sayHi.bind(this)}>
         {this.props.name}

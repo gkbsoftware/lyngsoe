@@ -1,6 +1,6 @@
-import React from 'react'
+var React = require('react');
 
-export default class Note extends React.Component {
+var Note = React.createClass({
   sayHi(){
     console.log('hi')
     let data = {
@@ -26,4 +26,6 @@ export default class Note extends React.Component {
       </div>
     );
   }
-}
+})
+
+module.exports = Note;

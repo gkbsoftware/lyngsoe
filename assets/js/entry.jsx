@@ -1,5 +1,5 @@
-import "../css/style.css"
-import React from 'react'
+var React = require('react');
+require('../css/style.css')
 // import App from './App'
 
 var App = React.createClass({

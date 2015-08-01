@@ -8,7 +8,7 @@ var inventory = require('../services/inventory');
 
 /* GET home page. */
 router.get('/', function(req, res, next) {
-  res.render('layout', { title: 'Lyngse Inventory Manager' });
+  res.render('layout', { title: 'Lyngsoe Inventory Manager' });
 });
 
 router.get('/entries', function(req, res, next) {

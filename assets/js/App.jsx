@@ -1,14 +1,14 @@
-import React from 'react'
-import Note from './Note'
+var React = require('react');
+var Note = require('./Note')
 
-export default class App extends React.Component {
+var App = React.createClass({
   constructor(){
     super()
     this.state = {entries: []}
   }
 
   componentDidMount(){
-    let _this = this
+    var _this = this
     fetch('/entries').then(function(d){return d.json()}).then(function (data) {
       _this.setState({entries: data.entries})
     })
@@ -21,4 +21,6 @@ export default class App extends React.Component {
       </div>
     );
   }
-}
+});
+
+module.exports = App;

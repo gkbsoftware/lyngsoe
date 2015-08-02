@@ -5,7 +5,7 @@ var Inventory = React.createClass({
   render: function() {
     return(
       <Layout>
-        <h1>{this.props.title}</h1>
+        <h1>Inventory</h1>
       </Layout>
     )
   }

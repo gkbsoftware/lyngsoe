@@ -7,6 +7,8 @@ var Note = React.createClass({
       name: this.props.name
     }
 
+    var _this = this;
+
     fetch('/entries', {
       method: 'post',
       headers: {
@@ -17,6 +19,10 @@ var Note = React.createClass({
         name: 'Hubot',
         login: 'hubot',
       })
+    }).then(function(response) {
+      return response.json()
+    }).then(function(json) {
+      console.log('parsed json', json)
     })
   },
 

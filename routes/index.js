@@ -16,7 +16,8 @@ router.get('/entries', function(req, res, next) {
 });
 
 router.post('/entries', function(req, res, next) {
-  res.send('posted to /entries')
+  console.log('req.body.name= ' + req.body.name);
+  res.json({testData: ['johnny', 'mike', 'alan']})
 });
 
 router.get('/db-connect', function(req, res) {

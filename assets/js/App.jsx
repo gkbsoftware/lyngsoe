@@ -2,25 +2,28 @@ var React = require('react');
 var Note = require('./Note')
 
 var App = React.createClass({
-  constructor(){
-    super()
-    this.state = {entries: []}
-  }
-
-  componentDidMount(){
+  componentDidMount: function(){
     var _this = this
     fetch('/entries').then(function(d){return d.json()}).then(function (data) {
       _this.setState({entries: data.entries})
     })
-  }
-  render() {
-    console.log(this.state.entries)
+  },
+
+  getInitialState: function() {
     return (
+      {entries: []}
+    )
+  },
+
+  render: function(){
+    return(
       <div>
-        {this.state.entries.map(function(entry){return <Note key={entry.name} {...entry}/> })}
+        {this.state.entries}
+        <br/>
+        <Note key={"thisKey"} name={"Notes"}/>
       </div>
-    );
+    )
   }
-});
+})
 
 module.exports = App;

@@ -6,8 +6,8 @@ require('dotenv').load();
 var conString = process.env.DB_INFO;
 
 module.exports = {
-  createPart: function() {
-    console.log('hi')
+  createPart: function(newPart, cb) {
+    console.log(newPart.partName)
   }
 
   // createUser: function(user, cb) {

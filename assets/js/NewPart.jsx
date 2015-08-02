@@ -6,19 +6,38 @@ var NewPart = React.createClass({
       <div className="container">
         <div className="panel panel-default">
           <div className="panel-heading">
-            <h3 className="panel-title">New Part</h3>
+            <h3 className="panel-title">{'Add a new part'}</h3>
           </div>
           <div className="panel-body">
             <form method="post" action="/new_part">
+
               <div className="form-group">
-                <label for="email">Email address</label>
-                <input type="email" className="form-control" id="email" placeholder="Email" name="emailAddress" value={this.props.emailAddress} />
+                <label>{'Name'}</label>
+                <input className="form-control" placeholder="Input Part Name" name="partName"/>
               </div>
+
               <div className="form-group">
-                <label for="password">Password</label>
-                <input type="password" className="form-control" id="password" placeholder="Password" name="password" />
+                <label>{'Part Number'}</label>
+                <input className="form-control" placeholder="Input Part Number" name="partNumber"/>
               </div>
-              <button type="submit" className="btn btn-success">Sign up</button>
+
+              <div className="checkbox">
+               <label>
+                 <input type="checkbox" name="hasSerialNumber"/> {'Has serial number'}
+               </label>
+              </div>
+
+              <div className="form-group">
+                <label>{'Serial Number'}</label>
+                <input className="form-control" placeholder="Input Serial Number" name="serialNumber"/>
+              </div>
+
+              <div className="form-group">
+                <label>{'Quantity'}</label>
+                <input type="number" className="form-control" placeholder={1} name="quantity"/>
+              </div>
+
+              <button type="submit" className="btn btn-success">Add Part</button>
             </form>
           </div>
         </div>

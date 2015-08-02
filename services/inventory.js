@@ -7,7 +7,7 @@ var conString = process.env.DB_INFO;
 
 module.exports = {
   createPart: function() {
-    cb(true);
+    console.log('hi')
   }
 
   // createUser: function(user, cb) {

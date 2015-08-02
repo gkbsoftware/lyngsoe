@@ -20,26 +20,18 @@ router.post('/entries', function(req, res, next) {
   res.json({testData: ['johnny', 'mike', 'alan']})
 });
 
-router.get('/db-connect', function(req, res) {
-  var pg = require('pg');
-  var conString = process.env.DB_INFO;
+router.post('/new_part', function(req, res) {
+  var newPart = {
+    partName: req.body.partName,
+    partNumber: req.body.partNumber,
+    hasSerialNumber: req.body.hasSerialNumber,
+    serialNumber: req.body.serialNumber,
+    quantity: req.body.quantity
+  }
 
-  pg.connect(conString, function(err, client, done) {
-    if(err) {
-      return console.error('error fetching client from pool', err);
-    }
-    client.query('SELECT $1::int AS number', ['1'], function(err, result) {
-      //call `done()` to release the client back to the pool
-      done();
+  inventory.createPart(newPart);
 
-      if(err) {
-        return console.error('error running query', err);
-      }
-      console.log(result.rows[0].number);
-      //output: 1
-    });
-  });
-  res.send('hi')
+  res.send('part added')
 });
 
 module.exports = router;

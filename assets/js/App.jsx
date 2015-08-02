@@ -24,7 +24,7 @@ var App = React.createClass({
             <h1>{'this is a test'}</h1>
             <br/>
             <Note key={"thisKey"} name={"Notes"}/>
-            <NewPart />
+            <NewPart emailAddress={"Enter your email here"}/>
           </body>
         </html>
       </div>

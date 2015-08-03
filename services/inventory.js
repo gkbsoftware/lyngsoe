@@ -49,19 +49,3 @@ module.exports = {
     });
   },
 }
-
-// pg.connect(conString, function(err, client, done) {
-//   console.log('createdPart2=' + createdPart);
-//   if(err) {
-//     return console.error('error fetching client from pool', err);
-//   }
-//   client.query('INSERT INTO parts (part_type_id, serial_number) VALUES ('+ createdPart +', $1)',
-//   [newPart.serialNumber], function(err, result) {
-//     //call `done()` to release the client back to the pool
-//     done();
-//
-//     if(err) {
-//       return console.error('error running query', err);
-//     }
-//   });
-// });

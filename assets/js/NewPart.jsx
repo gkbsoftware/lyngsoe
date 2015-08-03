@@ -3,22 +3,23 @@ var React = require('react');
 var NewPart = React.createClass({
   submitPart: function(e) {
     e.preventDefault();
-    console.log("submitted part");
 
-        fetch('/new_part', {
-          method: 'post',
-          headers: {
-            'Accept': 'application/json',
-            'Content-Type': 'application/json'
-          },
-          body: JSON.stringify({
-            partName: this.refs.partName.getDOMNode().value,
-            partNumber: this.refs.partNumber.getDOMNode().value,
-            hasSerialNumber: this.refs.hasSerialNumber.getDOMNode().value,
-            serialNumber: this.refs.serialNumber.getDOMNode().value,
-            quantity: this.refs.quantity.getDOMNode().value
-          })
-        })
+    fetch('/new_part', {
+      method: 'post',
+      headers: {
+        'Accept': 'application/json',
+        'Content-Type': 'application/json'
+      },
+      body: JSON.stringify({
+        partName: this.refs.partName.getDOMNode().value,
+        partNumber: this.refs.partNumber.getDOMNode().value,
+        hasSerialNumber: this.refs.hasSerialNumber.getDOMNode().value,
+        serialNumber: this.refs.serialNumber.getDOMNode().value,
+        quantity: this.refs.quantity.getDOMNode().value
+      })
+    })
+
+    console.log("submitted part");
   },
 
   render: function() {

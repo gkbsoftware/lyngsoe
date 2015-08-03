@@ -27,7 +27,7 @@ var NewPart = React.createClass({
       <div className="container">
         <div className="panel panel-default">
           <div className="panel-heading">
-            <h3 className="panel-title">{'Add a new part'}</h3>
+            <h3 className="panel-title">{'NewPart'}</h3>
           </div>
           <div className="panel-body">
             <form onSubmit={this.submitPart}>

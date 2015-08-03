@@ -1,6 +1,7 @@
 var React = require('react');
 var Note = require('./Note')
 var NewPart = require('./NewPart')
+var Navigation = require('./Navigation')
 
 var App = React.createClass({
   componentDidMount: function(){
@@ -21,10 +22,8 @@ var App = React.createClass({
       <div>
         <html lang="en">
           <body>
-            <h1>{'this is a test'}</h1>
-            <br/>
-            <Note key={"thisKey"} name={"Notes"}/>
-            <NewPart emailAddress={"Enter your email here"}/>
+            <Navigation />
+            <NewPart />
           </body>
         </html>
       </div>

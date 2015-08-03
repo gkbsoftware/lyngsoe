@@ -26,12 +26,14 @@ router.post('/new_part', function(req, res) {
     partNumber: req.body.partNumber,
     hasSerialNumber: req.body.hasSerialNumber,
     serialNumber: req.body.serialNumber,
-    quantity: req.body.quantity
+    quantity: req.body.quantity,
+    partTypeId: 0
   }
 
-  inventory.createPart(newPart);
-
-  res.send('part added')
+  inventory.createPart(newPart, function(partTypeId) {
+    newPart.partTypeId = partTypeId;
+    inventory.createSerialNumber(newPart);
+  });
 });
 
 module.exports = router;

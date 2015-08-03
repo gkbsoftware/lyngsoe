@@ -6,33 +6,62 @@ require('dotenv').load();
 var conString = process.env.DB_INFO;
 
 module.exports = {
-  createPart: function(newPart) {
+  createPart: function(newPart, cb) {
     console.log(newPart.partName)
 
     if(newPart.hasSerialNumber) {
       newPart.quantity = 1;
     }
 
-    var conString = process.env.DB_INFO;
-
-    //this initializes a connection pool
-    //it will keep idle connections open for a (configurable) 30 seconds
-    //and set a limit of 20 (also configurable)
     pg.connect(conString, function(err, client, done) {
       if(err) {
         return console.error('error fetching client from pool', err);
       }
-      client.query('SELECT $1::int AS number', ['1'], function(err, result) {
+      client.query('INSERT INTO part_type (name, part_number, has_serial_number, quantity) VALUES ($1, $2, $3, $4) RETURNING id',
+      [newPart.partName, newPart.partNumber, newPart.hasSerialNumber, newPart.quantity], function(err, result) {
         //call `done()` to release the client back to the pool
         done();
 
         if(err) {
           return console.error('error running query', err);
         }
-        console.log(result.rows[0].number);
-        //output: 1
+
+        cb(result.rows[0].id)
       });
     });
+  },
 
-  }
+  createSerialNumber: function(newPart) {
+
+    pg.connect(conString, function(err, client, done) {
+      if(err) {
+        return console.error('error fetching client from pool', err);
+      }
+      client.query('INSERT INTO parts (part_type_id, serial_number) VALUES ($1, $2)',
+      [newPart.partTypeId, newPart.serialNumber], function(err, result) {
+        //call `done()` to release the client back to the pool
+        done();
+
+        if(err) {
+          return console.error('error running query', err);
+        }
+      });
+    });
+  },
 }
+
+// pg.connect(conString, function(err, client, done) {
+//   console.log('createdPart2=' + createdPart);
+//   if(err) {
+//     return console.error('error fetching client from pool', err);
+//   }
+//   client.query('INSERT INTO parts (part_type_id, serial_number) VALUES ('+ createdPart +', $1)',
+//   [newPart.serialNumber], function(err, result) {
+//     //call `done()` to release the client back to the pool
+//     done();
+//
+//     if(err) {
+//       return console.error('error running query', err);
+//     }
+//   });
+// });

@@ -9,6 +9,7 @@ var React = require('react');
 var Note = require('./Note')
 var NewPart = require('./NewPart')
 var Navigation = require('./Navigation')
+var Feed = require('./Feed')
 
 var App = React.createClass({
   componentDidMount: function(){
@@ -27,13 +28,7 @@ var App = React.createClass({
   render: function(){
     return(
       <div>
-        <header>
-          <ul>
-            <li><Link to="app">Home</Link></li>
-            <li><Link to="newPart">New Part</Link></li>
-          </ul>
-          {'Logged in as Greg'}
-        </header>
+        <Navigation/>
       
         <RouteHandler/>
       </div>
@@ -44,7 +39,8 @@ var App = React.createClass({
 var routes = (
   <Route name="app" path='/' handler={App}>
     <Route name="newPart" handler={NewPart}/>
-    <DefaultRoute handler={Navigation}/>
+    <Route name="navigation" handler={Navigation}/>
+    <DefaultRoute handler={Feed}/>
   </Route>
 );
 

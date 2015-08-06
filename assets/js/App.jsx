@@ -1,11 +1,12 @@
-var Router = require('react-router');
+var React = require('react');
 
+var Router = require('react-router');
 var DefaultRoute = Router.DefaultRoute;
 var Link = Router.Link;
 var Route = Router.Route;
 var RouteHandler = Router.RouteHandler;
 
-var React = require('react');
+
 var Note = require('./Note')
 var NewPart = require('./NewPart')
 var Navigation = require('./Navigation')

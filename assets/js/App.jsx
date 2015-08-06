@@ -6,7 +6,6 @@ var Link = Router.Link;
 var Route = Router.Route;
 var RouteHandler = Router.RouteHandler;
 
-
 var Note = require('./Note')
 var NewPart = require('./NewPart')
 var Navigation = require('./Navigation')

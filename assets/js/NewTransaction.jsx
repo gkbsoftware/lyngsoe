@@ -29,11 +29,19 @@ var NewTransaction = React.createClass({
             <form onSubmit={this.submitPart}>
 
               <div className="form-group">
+                <label>{'Transaction Type'}</label>
+                <select className="form-control" name="tranType" ref="tranType" required >
+                  <option>Check-In</option>
+                  <option>Check-Out</option>
+                </select>
+              </div>
+
+              <div className="form-group">
                 <label>{'Author Initials'}</label>
                 <input className="form-control" placeholder="GKB" maxLength="3" name="tranAuthor" ref="tranAuthor" required />
               </div>
 
-              <button type="submit" className="btn btn-success">Add Part</button>
+              <button type="submit" className="btn btn-success">Submit</button>
             </form>
           </div>
         </div>

@@ -23,6 +23,8 @@ var Navigation = React.createClass({
               <ul className="nav navbar-nav">
                 <li><Link to="/">Transactions</Link></li>
                 <li><Link to="inventory">Inventory</Link></li>
+                <li><a>{'Customers'}</a></li>
+                <li><a>{'Projects'}</a></li>
               </ul>
 
               <ul className="nav navbar-nav navbar-right">

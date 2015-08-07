@@ -13,3 +13,23 @@ create table parts (
   part_type_id integer,
   serial_number varchar(255)
 );
+
+drop table if exists transactions;
+create table parts (
+  id serial primary key,
+  time_stamp timestamp,
+  type varchar(10),
+  author varchar(3),
+  project_number varchar(20),
+  customer varchar(40),
+  description varchar(255)
+);
+
+drop table if exists transaction_parts;
+create table parts (
+  id serial primary key,
+  part_type_name varchar(255),
+  part_type_part_number varchar(255),
+  part_serial_number varchar(255),
+  part_type_quantity integer
+);

@@ -4,7 +4,7 @@ var Router = require('react-router');
 var Link = Router.Link;
 var Route = Router.Route;
 
-var Feed = React.createClass({
+var Inventory = React.createClass({
   render: function() {
 
     return(
@@ -12,11 +12,11 @@ var Feed = React.createClass({
 
         <div className="panel panel-default">
           <div className="panel-heading">
-            <strong className="panel-title">{'Transactions'}</strong>
+            <strong className="panel-title">{'Inventory'}</strong>
           </div>
           <div className="panel-body">
             <ul>
-              <ui><Link to="newTransaction">Create New Transaction</Link></ui>
+              <ui><Link to="newPart">Add New Part</Link></ui>
             </ul>
 
             <div className="row">
@@ -75,4 +75,4 @@ var Transaction = React.createClass({
   }
 });
 
-module.exports = Feed;
+module.exports = Inventory;

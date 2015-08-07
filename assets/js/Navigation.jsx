@@ -17,23 +17,14 @@ var Navigation = React.createClass({
                 <span className="icon-bar"></span>
                 <span className="icon-bar"></span>
               </button>
-              <a className="navbar-brand" href="">Home</a>
             </div>
 
             <div className="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
               <ul className="nav navbar-nav">
-                <li><Link to="navigation">Nav</Link></li>
-                <li className="dropdown">
-                  <a href="#" className="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Inventory <span className="caret"></span></a>
-                  <ul className="dropdown-menu">
-                    <li><Link to="newPart">Add New Part</Link></li>
-                    <li><a href="#">Show Inventory</a></li>
-                    <li role="separator" className="divider"></li>
-                    <li><a href="#">Separated link</a></li>
-                  </ul>
-                </li>
+                <li><Link to="/">Transactions</Link></li>
+                <li><Link to="inventory">Inventory</Link></li>
               </ul>
-        
+
               <ul className="nav navbar-nav navbar-right">
                 <li className="dropdown">
                   <a href="#" className="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">My Account <span className="caret"></span></a>
@@ -41,7 +32,7 @@ var Navigation = React.createClass({
                     <li><a href="#">Profile</a></li>
                     <li><a href="#">Preferences action</a></li>
                     <li role="separator" className="divider"></li>
-                    <li><a href="#">Logout link</a></li>
+                    <li><a href="#">Logout</a></li>
                   </ul>
                 </li>
               </ul>

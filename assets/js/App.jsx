@@ -1,5 +1,7 @@
 var React = require('react');
 
+require('../css/style.css');
+
 var Router = require('react-router');
 var DefaultRoute = Router.DefaultRoute;
 var Link = Router.Link;
@@ -7,9 +9,11 @@ var Route = Router.Route;
 var RouteHandler = Router.RouteHandler;
 
 var Note = require('./Note')
+var Inventory = require('./Inventory')
 var NewPart = require('./NewPart')
 var Navigation = require('./Navigation')
 var Feed = require('./Feed')
+var NewTransaction = require('./NewTransaction')
 
 var App = React.createClass({
   componentDidMount: function(){
@@ -29,7 +33,7 @@ var App = React.createClass({
     return(
       <div>
         <Navigation/>
-      
+
         <RouteHandler/>
       </div>
     )
@@ -38,8 +42,12 @@ var App = React.createClass({
 
 var routes = (
   <Route name="app" path='/' handler={App}>
-    <Route name="newPart" handler={NewPart}/>
     <Route name="navigation" handler={Navigation}/>
+
+    <Route name="inventory" handler={Inventory}/>
+      <Route name="newPart" handler={NewPart}/>
+
+    <Route name="newTransaction" handler={NewTransaction}/>
     <DefaultRoute handler={Feed}/>
   </Route>
 );

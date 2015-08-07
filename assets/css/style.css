@@ -1,3 +1,7 @@
 body {
     background: #6fac31;
 }
+
+.centerMe {
+  text-align: center;
+}

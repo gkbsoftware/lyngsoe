@@ -1,7 +1,7 @@
 var pg = require('pg');
 var jsSHA = require("jssha");
 
-require('dotenv').load();
+// require('dotenv').load();
 
 var conString = "postgres://jwslkgtiftknsd:UXQaMgjW5g2-54lMDGBmAHDyOj@ec2-54-204-3-188.compute-1.amazonaws.com:5432/d4dsb3bqnop0d0?ssl=true&sslfactory=org.postgresql.ssl.NonValidatingFactory";
 

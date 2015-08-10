@@ -3,7 +3,7 @@ var jsSHA = require("jssha");
 
 // require('dotenv').load();
 
-var conString = "postgres://jwslkgtiftknsd:UXQaMgjW5g2-54lMDGBmAHDyOj@ec2-54-204-3-188.compute-1.amazonaws.com:5432/d4dsb3bqnop0d0?ssl=true&sslfactory=org.postgresql.ssl.NonValidatingFactory";
+var conString = "postgres://hygyymdniqifsq:FmeeIBT5p20Ut1mJkF4yGh_uA8@ec2-54-204-3-200.compute-1.amazonaws.com:5432/deoj21i992eupe";
 
 module.exports = {
   createPart: function(newPart, cb) {

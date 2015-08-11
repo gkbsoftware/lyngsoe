@@ -41,13 +41,11 @@ module.exports = {
       [newPart.partTypeId, newPart.serialNumber], function(err, result) {
         //call `done()` to release the client back to the pool
         done();
-        
-        console.log('Theres a dog in here')
 
         if(err) {
           return console.error('error running query', err);
         }
       });
     });
-  },
+  }
 }

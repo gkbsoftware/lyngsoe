@@ -5,6 +5,7 @@ var router = express.Router();
 var pg = require('pg')
 
 var inventory = require('../services/inventory');
+var transactions = require('../services/transactions');
 
 /* GET home page. */
 router.get('/', function(req, res, next) {
@@ -35,5 +36,14 @@ router.post('/new_part', function(req, res) {
     inventory.createSerialNumber(newPart);
   });
 });
+
+router.post('/new_transaction', function(req, res) {
+  var newTran = {
+    tranAuthor: req.body.tranAuthor,
+    tranType: req.body.tranType
+  }
+  
+  transactions.createCheckin(newTran);
+})
 
 module.exports = router;

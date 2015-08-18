@@ -1,5 +1,9 @@
 var React = require('react');
 
+var Router = require('react-router');
+var Link = Router.Link;
+var Route = Router.Route;
+
 var NewPart = React.createClass({
   submitPart: function(e) {
     e.preventDefault();
@@ -20,6 +24,7 @@ var NewPart = React.createClass({
     })
 
     console.log("submitted part");
+    Router.run(routes, '/');
   },
 
   render: function() {

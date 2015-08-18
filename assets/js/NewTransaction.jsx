@@ -11,11 +11,13 @@ var NewTransaction = React.createClass({
         'Content-Type': 'application/json'
       },
       body: JSON.stringify({
-        partName: this.refs.tranAuthor.getDOMNode().value,
+        tranType: this.refs.tranType.getDOMNode().value,
+        tranAuthor: this.refs.tranAuthor.getDOMNode().value,
       })
     })
 
-    location.href('/');
+    console.log("submitted tran");
+    Router.run(routes, '/');
   },
 
   render: function() {
